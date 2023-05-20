@@ -11,7 +11,9 @@ const User = require('./User');
 const Admin = require('./Admin');
 app.use(express.json());
 const cors = require('cors');
-app.use(cors());
+app.use(cors({
+    origin : "https://newsshare.netlify.app"
+}));
 let News = require('./News');
 
 
