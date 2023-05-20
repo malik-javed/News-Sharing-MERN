@@ -12,6 +12,10 @@ const Admin = require('./Admin');
 app.use(express.json());
 const cors = require('cors');
 app.use(cors());
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    next();
+  });
 let News = require('./News');
 
 
