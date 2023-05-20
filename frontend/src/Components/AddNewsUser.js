@@ -13,7 +13,7 @@ const AddNewsUser = () => {
 
     const addnewsHandler = async () => {
         console.log(heading, subheading, content);
-        let result = await fetch(`http://localhost:4500/addnewsuser`, {
+        let result = await fetch(`https://newssharing-backend.vercel.app/addnewsuser`, {
             method: 'post',
             body: JSON.stringify({ heading, subheading, content, addby }),
             headers: {

@@ -9,7 +9,7 @@ const MyNews = () => {
     let [news, setNews] = useState([]);
     let addby = JSON.parse(localStorage.getItem('user'))._id;
     const getnewsuser = async () => {
-        let result = await fetch(`http://localhost:4500/usernews/${addby}`);
+        let result = await fetch(`https://newssharing-backend.vercel.app/usernews/${addby}`);
         result = await result.json();
         if (result) { setNews(result); }
         else { setNews("No News Added By You"); }
@@ -17,7 +17,7 @@ const MyNews = () => {
     }
     getnewsuser();
     const deleteNews = async (id) => {
-        let result = await fetch(`http://localhost:4500/deletenews/${id}`, {
+        let result = await fetch(`https://newssharing-backend.vercel.app/deletenews/${id}`, {
             method: 'delete'
         })
         result = await result.json();

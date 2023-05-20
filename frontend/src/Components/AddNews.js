@@ -2,6 +2,8 @@ import './AddNews.css';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Footer from '../Common/Footer';
+// import env from "react-dotenv";
+
 
 
 const AddNews = () => {
@@ -18,7 +20,7 @@ const AddNews = () => {
             return false;
         }
         console.log(heading, subheading, content, addby);
-        let result = await fetch(`http://localhost:4500/addnews`, {
+        let result = await fetch(`https://newssharing-backend.vercel.app/addnews`, {
             method: 'post',
             body: JSON.stringify({ heading, subheading, content, addby }),
             headers: {

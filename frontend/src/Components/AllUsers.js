@@ -5,7 +5,7 @@ import { useState } from 'react';
 const AllUsers = () => {
     let [user,setUser] = useState([]);
     const getUser =async () =>{
-        let result = await fetch(`http://localhost:4500/alluser`);
+        let result = await fetch(`https://newssharing-backend.vercel.app/alluser`);
         result =await result.json();
         setUser(result);
     }

@@ -7,7 +7,9 @@ import Footer from '../Common/Footer';
 
 const UpdateNewsAdmin = () => {
     useEffect(() => {
+        
         getNewsAdmin();
+        // eslint-disable-next-line
     }, []);
     let params = useParams();
     let navigate = useNavigate();
@@ -17,7 +19,7 @@ const UpdateNewsAdmin = () => {
     let addby = "admin";
     const updateNewsHandler = async () => {
         console.log(heading, subheading, content, addby);
-        let result = await fetch(`http://localhost:4500/updatenewsadmin/${params.id}`, {
+        let result = await fetch(`https://newssharing-backend.vercel.app/updatenewsadmin/${params.id}`, {
             method: 'put',
             body: JSON.stringify({ heading, subheading, content, addby }),
             headers: {
@@ -31,7 +33,7 @@ const UpdateNewsAdmin = () => {
     }
 
     const getNewsAdmin = async () => {
-        let result = await fetch(`http://localhost:4500/getallnewsadmin/${params.id}`);
+        let result = await fetch(`https://newssharing-backend.vercel.app/getallnewsadmin/${params.id}`);
         result = await result.json();
         setTopic(result.heading);
         setSubtopic(result.subheading);

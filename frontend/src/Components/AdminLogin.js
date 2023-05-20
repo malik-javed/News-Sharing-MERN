@@ -11,7 +11,7 @@ const AdminLogin = () => {
     let navigate = useNavigate();
     const adminloginClicked = async () => {
         console.log(username, password);
-        let result = await fetch(`http://localhost:4500/adminlogin`, {
+        let result = await fetch(`https://newssharing-backend.vercel.app/adminlogin`, {
             method: 'post',
             body: JSON.stringify({ username, password }),
             headers: {

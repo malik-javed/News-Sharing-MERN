@@ -8,7 +8,7 @@ const AllNewsAdmin = () => {
     let [news, setNews] = useState([]);
 
     const getNewsAdmin = async () => {
-        let result = await fetch(`http://localhost:4500/allnewsadmin`);
+        let result = await fetch(`https://newssharing-backend.vercel.app/allnewsadmin`);
         result = await result.json();
         setNews(result);
     }
@@ -16,7 +16,7 @@ const AllNewsAdmin = () => {
         getNewsAdmin();
     }, []);
     const deleteNews = async (id) => {
-        let result = await fetch(`http://localhost:4500/deletenews/${id}`, {
+        let result = await fetch(`https://newssharing-backend.vercel.app/deletenews/${id}`, {
             method: 'delete'
         })
         result = await result.json();
@@ -26,7 +26,7 @@ const AllNewsAdmin = () => {
     const newSearchAdmin = async (e) => {
         let key = e.target.value;
         if (key) {
-            let result = await fetch(`http://localhost:4500/searchnews-admin/${key}`);
+            let result = await fetch(`https://newssharing-backend.vercel.app/searchnews-admin/${key}`);
             result = await result.json();
             console.log(result);
             if (result) {

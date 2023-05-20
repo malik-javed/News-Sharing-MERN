@@ -8,7 +8,7 @@ const AllNewsUser = () => {
     let [news, setNews] = useState([]);
 
     const getallnewsuser = async () => {
-        let result = await fetch(`http://localhost:4500/allnewsuser`);
+        let result = await fetch(`https://newssharing-backend.vercel.app/allnewsuser`);
         result = await result.json();
         setNews(result);
     }
@@ -19,7 +19,7 @@ const AllNewsUser = () => {
     const searchNewsUser = async (e) => {
         let key = e.target.value;
         if (key) {
-            let result = await fetch(`http://localhost:4500/searchnews-user/${key}`);
+            let result = await fetch(`https://newssharing-backend.vercel.app/searchnews-user/${key}`);
             result = await result.json();
             if (result) {
                 setNews(result);

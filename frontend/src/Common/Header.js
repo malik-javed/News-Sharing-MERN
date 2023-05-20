@@ -4,7 +4,8 @@ import './Header.css';
 
 const Header = () =>{
     const auth = localStorage.getItem('user');
-    var Name="";
+    var Name=""
+    // eslint-disable-next-line
     try{var Name = JSON.parse(auth).name.split(' ');}
     catch{console.log("Can not get Name")}
     const admin = localStorage.getItem('admin');
@@ -16,19 +17,19 @@ const Header = () =>{
     return(
         <div className='row header-menu-logo'>
             <div className='col-2'>
-                <i class="fa-solid fa-book-open-reader"></i>
+                <i className="fa-solid fa-book-open-reader"></i>
             </div>
             <div className='col-10'>
                 <ul className='header-menu'>
                      {
                         auth ?
                         <>
-                            <li><Link className='header-menu-list' to="/home" title='Home'><i class="fa-solid fa-house-user"></i></Link></li>
+                            <li><Link className='header-menu-list' to="/home" title='Home'><i className="fa-solid fa-house-user"></i></Link></li>
                             <li><Link className='header-menu-list' to="/news">News</Link></li>
                             <li><Link className='header-menu-list' to="/addnewsuser">Add News</Link></li>
                             <li><Link className='header-menu-list' to="/mynews">My News</Link></li>
-                            <li><Link className='header-menu-list' to="/editprofile" title='Edit Profile'><i class="fa-solid fa-user-pen"></i></Link></li>
-                            <li><Link onClick={ logout } className='header-menu-list' to="/login" title='Logout'><i class="fa-solid fa-right-from-bracket"></i> ({ Name[0] })</Link></li>
+                            <li><Link className='header-menu-list' to="/editprofile" title='Edit Profile'><i className="fa-solid fa-user-pen"></i></Link></li>
+                            <li><Link onClick={ logout } className='header-menu-list' to="/login" title='Logout'><i className="fa-solid fa-right-from-bracket"></i> ({ Name[0] })</Link></li>
                         </>   :
 
                                 admin ?

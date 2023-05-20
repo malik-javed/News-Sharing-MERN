@@ -15,10 +15,11 @@ const EditProfile = () => {
     let userId = user._id;
     useEffect(() => {
         getUser();
+        // eslint-disable-next-line
     }, []);
 
     const getUser = async () => {
-        let result = await fetch(`http://localhost:4500/getuser/${userId}`);
+        let result = await fetch(`https://newssharing-backend.vercel.app/getuser/${userId}`);
         result = await result.json();
         setName(result.name); setEmail(result.email); setContact(result.contact); setCity(result.city); setPassword(result.password);
     }
@@ -29,7 +30,7 @@ const EditProfile = () => {
             setError(true);
             return false;
         }
-        let result = await fetch(`http://localhost:4500/updateuser/${userId}`, {
+        let result = await fetch(`https://newssharing-backend.vercel.app/updateuser/${userId}`, {
             method: 'put',
             body: JSON.stringify({ name, email, password, contact, city }),
             headers: {

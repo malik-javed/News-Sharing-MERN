@@ -13,11 +13,12 @@ const EditNewsUser = () => {
     let addby = JSON.parse(localStorage.getItem('user'))._id;
     useEffect(() => {
         getNewsUser();
+        // eslint-disable-next-line
     }, []);
 
 
     const getNewsUser = async () => {
-        let result = await fetch(`http://localhost:4500/getallnewsuser/${params.key}`);
+        let result = await fetch(`https://newssharing-backend.vercel.app/getallnewsuser/${params.key}`);
         result = await result.json();
         setHeading(result.heading);
         setSubheading(result.subheading);
@@ -27,7 +28,7 @@ const EditNewsUser = () => {
 
     const editNewsHandler = async () => {
         console.log(heading, subheading, content, addby);
-        let result = await fetch(`http://localhost:4500/updatenewsuser/${params.key}`, {
+        let result = await fetch(`https://newssharing-backend.vercel.app/updatenewsuser/${params.key}`, {
             method: 'put',
             body: JSON.stringify({ heading, subheading, content, addby }),
             headers: {
