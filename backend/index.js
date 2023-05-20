@@ -1,8 +1,12 @@
 const express = require('express');
+require('dotenv').config()
 const app = express();
+const PORT = process.env.PORT || 4500;
+const DATABASE_URL = process.env.DATABASE_URL;
+// const DATABASE_NAME = process.env.DATABASE_NAME;
 const mongoose = require('mongoose');
-mongoose.connect("mongodb://127.0.0.1:27017/Book");
-console.log("Connected")
+mongoose.connect(DATABASE_URL);
+console.log(`Connected at ${PORT} || NewsSharing`)
 const User = require('./User');
 const Admin = require('./Admin');
 app.use(express.json());
@@ -182,4 +186,4 @@ app.get('/alluser',async (req,res)=>{
     res.send(result);
 });
 
-app.listen(4500);
+app.listen(process.env.PORT || 4500);
