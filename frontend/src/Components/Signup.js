@@ -14,6 +14,7 @@ const Signup = () => {
     const signupHandler = async () => {
         console.log(name, email, password, contact, city);
         let result = await fetch(`https://newssharing-backend.vercel.app/signup`, {
+            mode: 'no-cors',
             method: 'post',
             body: JSON.stringify({ name, email, password, contact, city }),
             headers: {

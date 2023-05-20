@@ -12,6 +12,7 @@ const AdminLogin = () => {
     const adminloginClicked = async () => {
         console.log(username, password);
         let result = await fetch(`https://newssharing-backend.vercel.app/adminlogin`, {
+            mode: 'no-cors',
             method: 'post',
             body: JSON.stringify({ username, password }),
             headers: {

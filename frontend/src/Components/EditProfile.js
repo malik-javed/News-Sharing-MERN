@@ -19,7 +19,10 @@ const EditProfile = () => {
     }, []);
 
     const getUser = async () => {
-        let result = await fetch(`https://newssharing-backend.vercel.app/getuser/${userId}`);
+        let result = await fetch(`https://newssharing-backend.vercel.app/getuser/${userId}`,
+        {
+            mode: 'no-cors'
+        });
         result = await result.json();
         setName(result.name); setEmail(result.email); setContact(result.contact); setCity(result.city); setPassword(result.password);
     }
@@ -31,6 +34,7 @@ const EditProfile = () => {
             return false;
         }
         let result = await fetch(`https://newssharing-backend.vercel.app/updateuser/${userId}`, {
+            mode: 'no-cors',
             method: 'put',
             body: JSON.stringify({ name, email, password, contact, city }),
             headers: {

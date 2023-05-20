@@ -18,7 +18,10 @@ const EditNewsUser = () => {
 
 
     const getNewsUser = async () => {
-        let result = await fetch(`https://newssharing-backend.vercel.app/getallnewsuser/${params.key}`);
+        let result = await fetch(`https://newssharing-backend.vercel.app/getallnewsuser/${params.key}`,
+        {
+            mode: 'no-cors'
+        });
         result = await result.json();
         setHeading(result.heading);
         setSubheading(result.subheading);
@@ -29,6 +32,7 @@ const EditNewsUser = () => {
     const editNewsHandler = async () => {
         console.log(heading, subheading, content, addby);
         let result = await fetch(`https://newssharing-backend.vercel.app/updatenewsuser/${params.key}`, {
+            mode: 'no-cors',
             method: 'put',
             body: JSON.stringify({ heading, subheading, content, addby }),
             headers: {
