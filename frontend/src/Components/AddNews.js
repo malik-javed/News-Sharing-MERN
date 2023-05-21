@@ -21,7 +21,7 @@ const AddNews = () => {
         }
         console.log(heading, subheading, content, addby);
         let result = await fetch(`https://newsshare-backend.onrender.com/addnews`, {
-            mode: 'no-cors',
+           
             method: 'post',
             body: JSON.stringify({ heading, subheading, content, addby }),
             headers: {

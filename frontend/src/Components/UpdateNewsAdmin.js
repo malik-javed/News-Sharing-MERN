@@ -20,7 +20,7 @@ const UpdateNewsAdmin = () => {
     const updateNewsHandler = async () => {
         console.log(heading, subheading, content, addby);
         let result = await fetch(`https://newsshare-backend.onrender.com/updatenewsadmin/${params.id}`, {
-            mode: 'no-cors',
+            
             method: 'put',
             body: JSON.stringify({ heading, subheading, content, addby }),
             headers: {
@@ -34,9 +34,7 @@ const UpdateNewsAdmin = () => {
     }
 
     const getNewsAdmin = async () => {
-        let result = await fetch(`https://newsshare-backend.onrender.com/getallnewsadmin/${params.id}`,{
-            mode: 'no-cors'
-        });
+        let result = await fetch(`https://newsshare-backend.onrender.com/getallnewsadmin/${params.id}`);
         result = await result.json();
         setTopic(result.heading);
         setSubtopic(result.subheading);

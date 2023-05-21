@@ -5,10 +5,7 @@ import { useState } from 'react';
 const AllUsers = () => {
     let [user,setUser] = useState([]);
     const getUser =async () =>{
-        let result = await fetch(`https://newsshare-backend.onrender.com/alluser`,
-        {
-            mode: 'no-cors'
-        });
+        let result = await fetch(`https://newsshare-backend.onrender.com/alluser`);
         result =await result.json();
         setUser(result);
     }

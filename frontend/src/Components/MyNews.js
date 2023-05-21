@@ -10,7 +10,7 @@ const MyNews = () => {
     let addby = JSON.parse(localStorage.getItem('user'))._id;
     const getnewsuser = async () => {
         let result = await fetch(`https://newsshare-backend.onrender.com/usernews/${addby}`,{
-            mode: 'no-cors'
+           
         });
         result = await result.json();
         if (result) { setNews(result); }
@@ -20,7 +20,7 @@ const MyNews = () => {
     getnewsuser();
     const deleteNews = async (id) => {
         let result = await fetch(`https://newsshare-backend.onrender.com/deletenews/${id}`, {
-            mode: 'no-cors',
+           
             method: 'delete'
         })
         result = await result.json();

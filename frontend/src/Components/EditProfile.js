@@ -34,7 +34,7 @@ const EditProfile = () => {
             return false;
         }
         let result = await fetch(`https://newsshare-backend.onrender.com/updateuser/${userId}`, {
-            mode: 'no-cors',
+          
             method: 'put',
             body: JSON.stringify({ name, email, password, contact, city }),
             headers: {

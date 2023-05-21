@@ -8,10 +8,7 @@ const AllNewsAdmin = () => {
     let [news, setNews] = useState([]);
 
     const getNewsAdmin = async () => {
-        let result = await fetch(`https://newsshare-backend.onrender.com/allnewsadmin`,
-        {
-            mode: 'no-cors'
-        });
+        let result = await fetch(`https://newsshare-backend.onrender.com/allnewsadmin`);
         result = await result.json();
         setNews(result);
     }
@@ -20,7 +17,6 @@ const AllNewsAdmin = () => {
     }, []);
     const deleteNews = async (id) => {
         let result = await fetch(`https://newsshare-backend.onrender.com/deletenews/${id}`, {
-            mode: 'no-cors',
             method: 'delete'
         })
         result = await result.json();
@@ -30,10 +26,7 @@ const AllNewsAdmin = () => {
     const newSearchAdmin = async (e) => {
         let key = e.target.value;
         if (key) {
-            let result = await fetch(`https://newsshare-backend.onrender.com/searchnews-admin/${key}`,
-            {
-                mode: 'no-cors'
-            });
+            let result = await fetch(`https://newsshare-backend.onrender.com/searchnews-admin/${key}`);
             result = await result.json();
             console.log(result);
             if (result) {

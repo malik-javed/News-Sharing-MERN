@@ -12,15 +12,25 @@ const AdminLogin = () => {
     const adminloginClicked = async () => {
         console.log(username, password);
         let result = await fetch(`https://newsshare-backend.onrender.com/adminlogin`, {
-            mode: 'no-cors',
+            
             method: 'post',
             body: JSON.stringify({ username, password }),
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Credentials" : true 
             }
         });
-        result = await result.json();
-        console.log(result);
+        try {
+            result = await result.json();
+            // Process the JSON response here
+          } catch (error) {
+            console.log('Error:', error);
+            // Handle the error appropriately (e.g., display an error message)
+          }
+          
+        // result = await result.json();
+        // console.log(result);
         if (result.length > 0) {
             localStorage.setItem('admin', JSON.stringify(result));
             navigate('/adminhome');
