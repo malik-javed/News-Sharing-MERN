@@ -10,7 +10,7 @@ const Login = () => {
 
     const loginClicked = async () => {
         console.log(email, password);
-        let result = await fetch(`https://newssharing-backend.vercel.app/login`, {
+        let result = await fetch(`https://newsshare-backend.onrender.com/login`, {
             mode: 'no-cors',
             method: 'post',
             body: JSON.stringify({ email, password }),

@@ -8,7 +8,7 @@ const AllNewsAdmin = () => {
     let [news, setNews] = useState([]);
 
     const getNewsAdmin = async () => {
-        let result = await fetch(`https://newssharing-backend.vercel.app/allnewsadmin`,
+        let result = await fetch(`https://newsshare-backend.onrender.com/allnewsadmin`,
         {
             mode: 'no-cors'
         });
@@ -19,7 +19,7 @@ const AllNewsAdmin = () => {
         getNewsAdmin();
     }, []);
     const deleteNews = async (id) => {
-        let result = await fetch(`https://newssharing-backend.vercel.app/deletenews/${id}`, {
+        let result = await fetch(`https://newsshare-backend.onrender.com/deletenews/${id}`, {
             mode: 'no-cors',
             method: 'delete'
         })
@@ -30,7 +30,7 @@ const AllNewsAdmin = () => {
     const newSearchAdmin = async (e) => {
         let key = e.target.value;
         if (key) {
-            let result = await fetch(`https://newssharing-backend.vercel.app/searchnews-admin/${key}`,
+            let result = await fetch(`https://newsshare-backend.onrender.com/searchnews-admin/${key}`,
             {
                 mode: 'no-cors'
             });

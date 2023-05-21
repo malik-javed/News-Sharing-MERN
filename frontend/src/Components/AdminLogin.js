@@ -11,7 +11,7 @@ const AdminLogin = () => {
     let navigate = useNavigate();
     const adminloginClicked = async () => {
         console.log(username, password);
-        let result = await fetch(`https://newssharing-backend.vercel.app/adminlogin`, {
+        let result = await fetch(`https://newsshare-backend.onrender.com/adminlogin`, {
             mode: 'no-cors',
             method: 'post',
             body: JSON.stringify({ username, password }),

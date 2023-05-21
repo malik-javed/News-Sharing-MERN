@@ -13,7 +13,7 @@ const Signup = () => {
 
     const signupHandler = async () => {
         console.log(name, email, password, contact, city);
-        let result = await fetch(`https://newssharing-backend.vercel.app/signup`, {
+        let result = await fetch(`https://newsshare-backend.onrender.com/signup`, {
             mode: 'no-cors',
             method: 'post',
             body: JSON.stringify({ name, email, password, contact, city }),

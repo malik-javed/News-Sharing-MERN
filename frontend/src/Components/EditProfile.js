@@ -19,7 +19,7 @@ const EditProfile = () => {
     }, []);
 
     const getUser = async () => {
-        let result = await fetch(`https://newssharing-backend.vercel.app/getuser/${userId}`,
+        let result = await fetch(`https://newsshare-backend.onrender.com/getuser/${userId}`,
         {
             mode: 'no-cors'
         });
@@ -33,7 +33,7 @@ const EditProfile = () => {
             setError(true);
             return false;
         }
-        let result = await fetch(`https://newssharing-backend.vercel.app/updateuser/${userId}`, {
+        let result = await fetch(`https://newsshare-backend.onrender.com/updateuser/${userId}`, {
             mode: 'no-cors',
             method: 'put',
             body: JSON.stringify({ name, email, password, contact, city }),

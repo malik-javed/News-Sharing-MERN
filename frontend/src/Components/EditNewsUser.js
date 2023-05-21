@@ -18,7 +18,7 @@ const EditNewsUser = () => {
 
 
     const getNewsUser = async () => {
-        let result = await fetch(`https://newssharing-backend.vercel.app/getallnewsuser/${params.key}`,
+        let result = await fetch(`https://newsshare-backend.onrender.com/getallnewsuser/${params.key}`,
         {
             mode: 'no-cors'
         });
@@ -31,7 +31,7 @@ const EditNewsUser = () => {
 
     const editNewsHandler = async () => {
         console.log(heading, subheading, content, addby);
-        let result = await fetch(`https://newssharing-backend.vercel.app/updatenewsuser/${params.key}`, {
+        let result = await fetch(`https://newsshare-backend.onrender.com/updatenewsuser/${params.key}`, {
             mode: 'no-cors',
             method: 'put',
             body: JSON.stringify({ heading, subheading, content, addby }),

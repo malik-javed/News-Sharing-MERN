@@ -8,7 +8,7 @@ const AllNewsUser = () => {
     let [news, setNews] = useState([]);
 
     const getallnewsuser = async () => {
-        let result = await fetch(`https://newssharing-backend.vercel.app/allnewsuser`,
+        let result = await fetch(`https://newsshare-backend.onrender.com/allnewsuser`,
         {
             mode: 'no-cors'
         });
@@ -22,7 +22,7 @@ const AllNewsUser = () => {
     const searchNewsUser = async (e) => {
         let key = e.target.value;
         if (key) {
-            let result = await fetch(`https://newssharing-backend.vercel.app/searchnews-user/${key}`,
+            let result = await fetch(`https://newsshare-backend.onrender.com/searchnews-user/${key}`,
             {
                 mode: 'no-cors'
             });

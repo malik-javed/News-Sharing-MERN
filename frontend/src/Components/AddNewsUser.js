@@ -13,7 +13,7 @@ const AddNewsUser = () => {
 
     const addnewsHandler = async () => {
         console.log(heading, subheading, content);
-        let result = await fetch(`https://newssharing-backend.vercel.app/addnewsuser`, {
+        let result = await fetch(`https://newsshare-backend.onrender.com/addnewsuser`, {
             mode: 'no-cors',
             method: 'post',
             body: JSON.stringify({ heading, subheading, content, addby }),

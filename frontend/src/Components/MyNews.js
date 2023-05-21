@@ -9,7 +9,7 @@ const MyNews = () => {
     let [news, setNews] = useState([]);
     let addby = JSON.parse(localStorage.getItem('user'))._id;
     const getnewsuser = async () => {
-        let result = await fetch(`https://newssharing-backend.vercel.app/usernews/${addby}`,{
+        let result = await fetch(`https://newsshare-backend.onrender.com/usernews/${addby}`,{
             mode: 'no-cors'
         });
         result = await result.json();
@@ -19,7 +19,7 @@ const MyNews = () => {
     }
     getnewsuser();
     const deleteNews = async (id) => {
-        let result = await fetch(`https://newssharing-backend.vercel.app/deletenews/${id}`, {
+        let result = await fetch(`https://newsshare-backend.onrender.com/deletenews/${id}`, {
             mode: 'no-cors',
             method: 'delete'
         })
